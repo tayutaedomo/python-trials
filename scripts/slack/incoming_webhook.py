@@ -1,9 +1,8 @@
-#! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
 #
 # Usage:
-#   scripts/slack_send_request.py "<slack incoming webhook endpoint>"
+#   python scripts/slack/incoming_webhook_request.py "<slack incoming webhook endpoint>"
 #
 
 import sys
@@ -21,7 +20,7 @@ opener = urllib2.build_opener(hh, hsh)
 urllib2.install_opener(opener)
 
 
-def send_request(url):
+def send(url):
     try:
         headers = {
             'Content-type': 'application/json'
@@ -47,8 +46,8 @@ def send_request(url):
 
 
 if __name__ == '__main__':
-    url = sys.argv[1]
-    print 'URL:', url
+    input_url = sys.argv[1]
+    print 'URL:', input_url
 
-    send_request(url)
+    send(input_url)
 
