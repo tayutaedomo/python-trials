@@ -1,5 +1,5 @@
 # python-trials
-Try Python.
+Try Python v3.
 
 # Setup
 ```
