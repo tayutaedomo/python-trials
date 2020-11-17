@@ -6,7 +6,7 @@ ROOT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')
 ROOT_PATH = os.path.abspath(ROOT_PATH)
 sys.path.append(os.path.abspath(ROOT_PATH))
 
-from scripts.pil.dot_char import Font4x8Converter 
+from scripts.pil.fonts_converter import Font4x8Converter 
 
 
 if __name__ == '__main__':
