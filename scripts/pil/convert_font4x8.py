@@ -14,7 +14,7 @@ if __name__ == '__main__':
     converter = Font4x8Converter(file_path)
     conv_all = converter.convert_all()
 
-    dest_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'fonts_4x8.json')
+    dest_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'font4x8.json')
     with open(dest_path, 'w') as f:
         json.dump(conv_all, f)
 

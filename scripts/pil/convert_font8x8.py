@@ -14,7 +14,7 @@ if __name__ == '__main__':
     converter = DotCharConverter(file_path)
     conv_all = converter.convert_all()
 
-    dest_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'fonts_8x8.json')
+    dest_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'font8x8.json')
     with open(dest_path, 'w') as f:
         json.dump(conv_all, f)
 
