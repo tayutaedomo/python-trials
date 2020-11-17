@@ -10,7 +10,7 @@ RGB_SHADOW = (0, 0, 0)
 class DotCharConverter:
     def __init__(self, file_path):
         self.image = Image.open(file_path).convert('RGB')
-        self.char_positions = CharPositions.generate()
+        self.char_positions = CharPos8x8.generate()
 
     def convert_char(self, char):
         pos = self.char_positions.get(char)
@@ -48,22 +48,22 @@ class DotCharConverter:
     def convert_all(self):
         conv_all = {}
 
-        for char in CharPositions.NUMERICS:
+        for char in CharPos8x8.NUMERICS:
             conv_all[char] = self.convert_char(char)
 
-        for char in CharPositions.UPPER_CHARS:
+        for char in CharPos8x8.UPPER_CHARS:
             conv_all[char] = self.convert_char(char)
 
-        for char in CharPositions.LOWER_CHARS:
+        for char in CharPos8x8.LOWER_CHARS:
             conv_all[char] = self.convert_char(char)
 
-        for char in CharPositions.SYMBOLS:
+        for char in CharPos8x8.SYMBOLS:
             conv_all[char] = self.convert_char(char)
 
         return conv_all
 
 
-class CharPositions:
+class CharPos8x8:
     NUMERICS = [
         '0', '1', '3', '4', '5', '6', '7', '8', '9'
     ]
@@ -106,7 +106,7 @@ class CharPositions:
 
 #     char_data = {}
 
-#     for char, pos in CharPositions.generate().items():
+#     for char, pos in CharPos8x8.generate().items():
 #         char_data[char] = []
 
 #         for x in range(pos[0], pos[0]+8):       # 8 dots
@@ -185,4 +185,4 @@ if __name__ == '__main__':
         print_char_pos(converter.convert_char('0'))
 
     else:
-        print(CharPositions.generate())
+        print(CharPos8x8.generate())
