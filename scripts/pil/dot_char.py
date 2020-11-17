@@ -201,37 +201,6 @@ class CharPos4x8:
         return char_pos
 
 
-# def create_char_data(file_path):
-#     im = Image.open(file_path)
-
-#     rgb_im = im.convert('RGB')
-
-#     char_data = {}
-
-#     for char, pos in CharPos8x8.generate().items():
-#         char_data[char] = []
-
-#         for x in range(pos[0], pos[0]+8):       # 8 dots
-#             row = []
-
-#             for y in range(pos[1], pos[1]+8):   # 8 dots
-#                 rgb = rgb_im.getpixel((x, y))
-
-#                 if rgb == RGB_BACKGROUND:
-#                     row.append(0)
-#                 elif rgb == RGB_MAIN_COLOR:
-#                     row.append(1)
-#                 elif rgb == RGB_SHADOW:
-#                     #row.append(2)
-#                     row.append(0)
-#                 else:
-#                     row.append(-1)
-
-#             char_data[char].append(row)
-
-#     return char_data
-
-
 def print_char_pos(pos):
     for y in range(len(pos)):
         row = ''
@@ -242,37 +211,6 @@ def print_char_pos(pos):
                 row += ' '
         print(row)
 
-
-# def convert_dot_char_image(file_path):
-#     im = Image.open(file_path)
-#     im.show()
-
-#     rgb_im = im.convert('RGB')
-#     size = rgb_im.size
-
-#     converted = []
-
-#     for y in range(size[1]):
-#         row = []
-
-#         for x in range(size[0]):
-#             # r, g, b = rgb_im.getpixel((x,y))
-#             # print(x, y, r,g,b)
-
-#             rgb = rgb_im.getpixel((x,y))
-
-#             if rgb == RGB_BACKGROUND:
-#                 row.append(0)
-#             elif rgb == RGB_MAIN_COLOR:
-#                 row.append(1)
-#             elif rgb == RGB_SHADOW:
-#                 row.append(2)
-#             else:
-#                 row.append(-1)
-
-#         converted.append(row)
-
-#     return converted 
 
 
 if __name__ == '__main__':
