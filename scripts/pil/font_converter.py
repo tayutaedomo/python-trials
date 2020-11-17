@@ -7,7 +7,7 @@ RGB_MAIN_COLOR = (255, 255, 255)
 RGB_SHADOW = (0, 0, 0)
 
 
-class DotCharConverter:
+class Font8x8Converter:
     def __init__(self, file_path):
         self.image = Image.open(file_path).convert('RGB')
         self.char_positions = CharPos8x8.generate()
@@ -220,16 +220,16 @@ if __name__ == '__main__':
         # converted = convert_dot_char_image(file_path)
         # [print(converted[i]) for i in range(len(converted))]
 
-        # converter = DotCharConverter(file_path)
-        # print_char_pos(converter.convert_char('0'))
+        converter = Font8x8Converter(file_path)
+        print_char_pos(converter.convert_char('0'))
         # for char in CharPos8x8.NUMERICS:
         # for char in CharPos8x8.UPPER_CHARS:
         # for char in CharPos8x8.LOWER_CHARS:
         # for char in CharPos8x8.SYMBOLS:
         #     print_char_pos(converter.convert_char(char))
 
-        converter = Font4x8Converter(file_path)
-        print_char_pos(converter.convert_char('A'))
+        # converter = Font4x8Converter(file_path)
+        # print_char_pos(converter.convert_char('A'))
         # for char in CharPos4x8.NUMERICS:
         # for char in CharPos4x8.SMALL_NUMERICS:
         # for char in CharPos4x8.UPPER_CHARS:
